@@ -19,6 +19,11 @@ pipeline {
                 sh 'echo "i am deploying"'
             }
         }
+        stage('approve') {
+            steps {
+                input 'Approved by manager'
+            }
+        }
         stage('prod deployment') {
             steps {
                 sh 'echo "i am prod deploying"'
